@@ -1,0 +1,99 @@
+Exo 9
+
+q1) 
+
+A^q - B^q = (A-B)S
+
+q2)
+
+Si m/n alors a^m -1/a^n -1 
+
+Puisque n=mq et donc a^n -1 = a^mq -1 = (a^n)^q - 1^q = (a^m -1)S pour S appartenant aux naturels
+d'après q1.
+
+Si a^m-1/a^n-1 on écrit n = mq+r
+
+avec 0 <= r < m pour m différent de 0 (Pour n = 0 on a a^m - 1 = 0 et si 0/a^n - 1 alors a^n-1 = 0 d'où a^n = 1 Pour a => 2 cela signifie n = 0 donc m/n dans ce cas)
+
+On remarque a^n - 1 = a^(mq+r) -1 = a^r (a^mq - 1) + a^r - 1
+                                  = a^r*S(a^m - 1)+a^r -1 avec 0 <= a^r - 1 < a^m - 1
+
+C'est la DE de a^n - 1 pour a^m - 1/a^n - 1 par hypothèse
+    On a a^r - 1 = 0 équivalent à a^r = 1 équivalent à r = 0
+
+Remarque : l'algorithme d'Euclide entre m et n (n => m) nous indique l'algorithme d'Euclide entre a^n - 1 et a^m - 1 !
+n = mq1 + r1        a^n - 1 = (a^m - 1)Q1 + a^r1 - 1
+m = r1q2 + r2       a^m - 1 = (a^r1 - 1)Q2 + a^r2 - 1
+.                                           0 <= a^r2 - 1 < a^r1 - 1
+.
+.
+rs-2 = rs-1 qs + rs
+dernier reste = pgcd(n,m)
+non nul
+
+Formule qui en découle : pgcd(a^n - 1, a^m - 1) = a^(pgcd(n,m)) - 1
+
+q3) Mq a^n - 1 n'est pas premier
+a^n - 1 = (a-1)(a^(n+1)+...+a+1)
+donc a - 1 /a^n - 1
+Or a > 2 donc a - 1 > 1 et vu que n > 1 on a a^n - 1 > a - 1
+Par conséquent a^n - 1 n'est pas premier
+
+q4) Mq si 2^n-1 est premier, alors n est premier.
+Supposant que 2^n-1 est premier et n n'est pas premier.
+En écrivant n = p*q avec p différent de 1 et p différent de n.
+On obtient 2^pq - 1 = (2^p)^q - 1
+D'après la question 3 avec a = 2^p > 2 et n = q > 1
+On en déduit que 2^pq - 1 n'est pas premier. Contradiction!!
+Donc n est premier.
+
+Exercice 12 :
+
+a) 2x congru à 1 mod 7 équivalent à 2x+7k = 1
+pgcd(2,7) = 1
+7 = 2*3+1 Il existe une solution 
+1 = 7-3*2       -3 est l'inverse de 2[7]
+2x congru à 1 mod 7
+(-3)*2x congru à -3 mod 7
+x congru à -3 mod 7
+
+b) 4x congru à 6 mod 18 équivalent à 4x + 18k = 6
+                        équivalent à 2x + 9k = 3
+                        équivalent à 2x congru à 3 mod 9
+pgcd(4,18) = 2
+
+18 = 4*4+2 Il existe une solution
+4 = 2*2 car 2/6
+
+pgcd (2,9)
+
+9 = 2*4+1
+1 = 9-2*4       -4 est l'inverse de 2 mod 9
+2x congru à 3 mod 9
+2*(-4)x congru à 3*(-4) mod 9
+x congru à -12 mod 9 qui est congru à -3 mod 9
+x congru à 6 mod 9
+
+c) 12x congru à 9 mod 6 équivalent à 12x + 6k = 9
+pgcd(12,6) = 6  6 ne divise pas 9 donc pas de solution.
+
+d) 23x congru à 41 mod 52 équivalent à 23x + 52k = 41
+pgcd(23,52) = 1     
+52 = 23*2+6
+23 = 6*3+5
+6 = 5*1+1
+
+1/41 donc il existe une solution
+
+1 = 6-5*1
+  = 6-(23-6*3)
+  = 6*4-23 
+  = 4(52-23*2)-23
+  = 4*52-23*9
+
+-9 est l'inverse de 23 mod 52
+23x congru à 41 mod 52
+23*(-9)x congru à 41*(-9) mod 52
+x congru à -369 mod 52
+donc x congru à -5 mod 52
+
